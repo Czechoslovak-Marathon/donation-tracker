@@ -104,7 +104,7 @@ const DonationIncentives = (props: DonationIncentivesProps) => {
           fullwidth
           onClick={setShowFormTrue}
           data-testid="addincentives-button">
-          {bids.length > 0 ? 'Add Another Incentive' : 'Add Incentives'}
+          {bids.length > 0 ? 'Přidat další cíl' : 'Přidat cíl'}
         </Button>
       )}
     </div>

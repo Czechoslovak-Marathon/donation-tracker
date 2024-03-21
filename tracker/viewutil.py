@@ -56,7 +56,7 @@ def get_event(event):
             raise Http404
     e = Event()
     e.id = None
-    e.name = 'All Events'
+    e.name = 'Všechny události'
     return e
 
 

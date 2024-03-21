@@ -194,7 +194,7 @@ class TestDonorAdmin(TestCase):
                             ),
                             'readstate': self.donation.readstate,
                             'commentstate': self.donation.commentstate,
-                            'currency': 'USD',
+                            'currency': 'CZK',
                             'requestedvisibility': 'CURR',
                             'requestedsolicitemail': 'CURR',
                         }

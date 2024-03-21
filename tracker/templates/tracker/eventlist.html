@@ -2,24 +2,24 @@
 {% load i18n %}
 
 
-{% block title %}{% trans "Event List" %}{% endblock %}
+{% block title %}{% trans "Seznam událostí" %}{% endblock %}
 
 {% block content %}
 
 <h2 class="text-center">
-  {% trans "Event List" %}
+  {% trans "Seznam událostí" %}
   {% if subheading %}
-    &mdash; {{ subheading }}
+  &mdash; {{ subheading }}
   {% endif %}
 </h2>
 
 <div class="col-xs-4 col-xs-offset-4" style="margin-top: 30px;">
   <div class="list-group center-block">
     {% if show_all %}
-      <a href="{% url 'tracker:index_all' %}" class="list-group-item">{% trans "All Events" %}</a>
+    <a href="{% url 'tracker:index_all' %}" class="list-group-item">{% trans "Všechny události" %}</a>
     {% endif %}
     {% for event in events %}
-      <a href="{% url pattern event=event.short %}" class="list-group-item">{{ event.name }}</a>
+    <a href="{% url pattern event=event.short %}" class="list-group-item">{{ event.name }}</a>
     {% endfor %}
   </div>
 </div>

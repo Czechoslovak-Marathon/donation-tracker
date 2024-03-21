@@ -2,7 +2,7 @@
 {% load donation_tags %}
 {% load i18n %}
 
-{% block title %}{% trans "Milestone Index" %} &mdash; {{ event.name }}{% endblock %}
+{% block title %}{% trans "Seznam milníků" %} &mdash; {{ event.name }}{% endblock %}
 
 {% block content %}
     <div class="fa-stack center-block medium-icon-blue fa-5x">
@@ -10,7 +10,7 @@
     </div>
 
     <h2 class="text-center">
-        {% trans "Milestone Index" %} &mdash; {{ event.name }}
+        {% trans "Seznam milníků" %} &mdash; {{ event.name }}
     </h2>
 
     {% include "tracker/partials/event_links.html" with index='tracker:milestoneindex' %}
@@ -19,16 +19,16 @@
         <thead>
         <tr>
             <th>
-                {% trans "Name" %}
+                {% trans "Název" %}
             </th>
             <th>
-                {% trans "Event" %}
+                {% trans "Událost" %}
             </th>
             <th>
-                {% trans "Description" %}
+                {% trans "Popis" %}
             </th>
             <th>
-                {% trans "Amount" %}
+                {% trans "Částka" %}
             </th>
         </tr>
         </thead>

@@ -9,15 +9,15 @@ import { MAX_BIDS_PER_DONATION } from './DonationConstants';
 import { Bid, Donation, Validation } from './DonationTypes';
 
 export const DonationErrors = {
-  NO_AMOUNT: 'Donation amount is not set',
+  NO_AMOUNT: 'Částka není vyplněna',
 
-  AMOUNT_MINIMUM: (min: number) => `Donation amount is below the allowed minimum (${CurrencyUtils.asCurrency(min)})`,
-  AMOUNT_MAXIMUM: (max: number) => `Donation amount is above the allowed maximum (${CurrencyUtils.asCurrency(max)})`,
+  AMOUNT_MINIMUM: (min: number) => `Částka je pod minimem (${CurrencyUtils.asCurrency(min)})`,
+  AMOUNT_MAXIMUM: (max: number) => `Částka je nad maximem (${CurrencyUtils.asCurrency(max)})`,
 
-  TOO_MANY_BIDS: (maxBids: number) => `Only ${maxBids} bids can be set per donation.`,
-  BID_SUM_EXCEEDS_TOTAL: 'Sum of bid amounts exceeds donation total.',
+  TOO_MANY_BIDS: (maxBids: number) => `Pouze ${maxBids} cílů na jeden dar.`,
+  BID_SUM_EXCEEDS_TOTAL: 'Součet částek cílů je vyšší než celkový dar.',
 
-  INVALID_EMAIL: 'Email is not a valid email address',
+  INVALID_EMAIL: 'Emailová adresa není správná.',
 };
 
 export default function validateDonation(eventDetails: EventDetails, donation: Donation, bids: Bid[]): Validation {

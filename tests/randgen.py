@@ -382,7 +382,7 @@ def generate_donation(
     if not max_time:
         max_time = min_time + datetime.timedelta(seconds=60 * 60 * 24 * 14)
     donation.timereceived = random_time(rand, min_time, max_time)
-    donation.currency = 'USD'
+    donation.currency = 'CZK'
     donation.transactionstate = transactionstate or 'COMPLETED'
     if donation.domain == 'LOCAL':
         assert (

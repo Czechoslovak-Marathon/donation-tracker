@@ -166,7 +166,7 @@ def bidindex(request, event=None):
         return views_common.tracker_response(
             request,
             'tracker/eventlist.html',
-            {'pattern': 'tracker:bidindex', 'subheading': 'Bids'},
+            {'pattern': 'tracker:bidindex', 'subheading': 'Cíle'},
         )
 
     bids = Bid.objects.public().filter(event=event).with_annotations()
@@ -249,7 +249,7 @@ def milestoneindex(request, event=None):
         return views_common.tracker_response(
             request,
             'tracker/eventlist.html',
-            {'pattern': 'tracker:milestoneindex', 'subheading': 'Milestones'},
+            {'pattern': 'tracker:milestoneindex', 'subheading': 'Milníky'},
         )
 
     milestones = Milestone.objects.filter(event=event, visible=True)
@@ -455,7 +455,7 @@ def runindex(request, event=None):
         return views_common.tracker_response(
             request,
             'tracker/eventlist.html',
-            {'pattern': 'tracker:runindex', 'subheading': 'Runs'},
+            {'pattern': 'tracker:runindex', 'subheading': 'Runy'},
         )
 
     searchParams = {}

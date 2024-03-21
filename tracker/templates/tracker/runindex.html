@@ -3,79 +3,79 @@
 {% load i18n %}
 
 
-{% block title %}{% trans "Run Index" %} &mdash; {{ event.name }}{% endblock %}
+{% block title %}{% trans "Seznam runů" %} &mdash; {{ event.name }}{% endblock %}
 
 {% block content %}
 <div class="fa-stack center-block medium-icon-blue fa-5x">
-            <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
-        </div>
-	<h2 class="text-center">
-			{% trans "Run Index" %}
-		&mdash;
-		{{ event.name }}
-	</h2>
+	<i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+</div>
+<h2 class="text-center">
+	{% trans "Seznam runů" %}
+	&mdash;
+	{{ event.name }}
+</h2>
 
-  {% include "tracker/partials/event_links.html" with index='tracker:runindex' %}
+{% include "tracker/partials/event_links.html" with index='tracker:runindex' %}
 
-	<table class="table table-striped table-condensed small">
+<table class="table table-striped table-condensed small">
 	<thead>
 		<tr>
 			<th>
-				{% trans "Name" %}
+				{% trans "Název" %}
 			</th>
 			<th>
-				{% trans "Runners" %}
-			</th>
-      <th>
-        {% trans "Hosts" %}
-      </th>
-      <th>
-        {% trans "Commentators" %}
-      </th>
-			<th>
-				{% trans "Description" %}
+				{% trans "Runneři" %}
 			</th>
 			<th>
-				{% trans "Start Time" %}
+				{% trans "Hosti" %}
 			</th>
 			<th>
-				{% trans "End Time" %}
+				{% trans "Komentátoři" %}
 			</th>
 			<th>
-				{% trans "Bid Wars" %}
+				{% trans "Popis" %}
+			</th>
+			<th>
+				{% trans "Začátek" %}
+			</th>
+			<th>
+				{% trans "Konec" %}
+			</th>
+			<th>
+				{% trans "Cíle" %}
 			</th>
 		</tr>
 	</thead>
 	{% for run in runs %}
-		<tr class="small">
-			<td>
-				<a href="{% url 'tracker:run' pk=run.pk %}">{{ run.name_with_category }}</a>
-			</td>
-			<td>
-        {{ run.runners.all|join:", " }}
-			</td>
-			<td>
-        {{ run.hosts.all|join:", " }}
-			</td>
-			<td>
-        {{ run.commentators.all|join:", " }}
-			</td>
-			<td>
-				{{ run.description|forumfilter }}
-			</td>
-			<td class="datetime">
-				{{ run.starttime|date:"c" }}
-			</td>
-			<td class="datetime">
-				{{ run.endtime|date:"c" }}
-			</td>
-			{% autoescape off %}
-			<td>
-				{% if run.hasbids %}<b>{% trans "Yes" %}</b>{% else %}{% trans "No" %}{% endif %}
-			</td>
-			{% endautoescape %}
-		</tr>
+	<tr class="small">
+		<td>
+			<a href="{% url 'tracker:run' pk=run.pk %}">{{ run.name_with_category }}</a>
+		</td>
+		<td>
+			{{ run.runners.all|join:", " }}
+		</td>
+		<td>
+			{{ run.hosts.all|join:", " }}
+		</td>
+		<td>
+			{{ run.commentators.all|join:", " }}
+		</td>
+		<td>
+			{{ run.description|forumfilter }}
+		</td>
+		<td class="datetime">
+			{{ run.starttime|date:"c" }}
+		</td>
+		<td class="datetime">
+			{{ run.endtime|date:"c" }}
+		</td>
+		{% autoescape off %}
+		<td>
+			{% if run.hasbids %}<b>{% trans "Yes" %}</b>{% else %}{% trans "No" %}{% endif %}
+		</td>
+		{% endautoescape %}
+	</tr>
 	{% endfor %}
-	</table>
-	{% include "tracker/partials/navfooter.html" %}
+</table>
+{% include "tracker/partials/navfooter.html" %}
 {% endblock %}

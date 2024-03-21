@@ -29,7 +29,7 @@ __all__ = [
     'Headset',
 ]
 
-_currencyChoices = (('USD', 'US Dollars'), ('CAD', 'Canadian Dollars'))
+_currencyChoices = (('USD', 'US Dollars'), ('CAD', 'Canadian Dollars'), ('CZK', 'Koruna česká'))
 
 
 logger = logging.getLogger(__name__)

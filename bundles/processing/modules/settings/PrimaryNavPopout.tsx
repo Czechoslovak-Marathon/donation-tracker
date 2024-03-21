@@ -120,14 +120,13 @@ export function PrimaryNavPopout(props: PrimaryNavPopoutProps) {
           <Header tag="h2" variant="header-md/normal">
             Public
           </Header>
-          <Anchor href={NavRoutes.HOME(eventId)}>Home</Anchor>
+          <Anchor href={NavRoutes.HOME(eventId)}>Domů</Anchor>
           <Anchor href={NavRoutes.RUNS(eventId)}>Runs</Anchor>
-          {hasPrizes ? <Anchor href={NavRoutes.PRIZES(eventId)}>Prizes</Anchor> : null}
-          <Anchor href={NavRoutes.BIDS(eventId)}>Bids</Anchor>
-          <Anchor href={NavRoutes.MILESTONES(eventId)}>Milestones</Anchor>
-          <Anchor href={NavRoutes.DONORS(eventId)}>Donors</Anchor>
-          <Anchor href={NavRoutes.DONATIONS(eventId)}>Donations</Anchor>
-          <Anchor href={NavRoutes.EVENTS}>All Events</Anchor>
+          <Anchor href={NavRoutes.BIDS(eventId)}>Cíle</Anchor>
+          <Anchor href={NavRoutes.MILESTONES(eventId)}>Milníky</Anchor>
+          <Anchor href={NavRoutes.DONORS(eventId)}>Dárci</Anchor>
+          <Anchor href={NavRoutes.DONATIONS(eventId)}>Dary</Anchor>
+          <Anchor href={NavRoutes.EVENTS}>Všechny události</Anchor>
         </Stack>
       </Stack>
     </Card>

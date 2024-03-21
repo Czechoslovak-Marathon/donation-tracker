@@ -45,7 +45,7 @@ class TestDonationConsumer(TransactionTestCase):
             receivername='Médecins Sans Frontières',
             targetamount=1,
             paypalemail='msf@example.com',
-            paypalcurrency='USD',
+            paypalcurrency='CZK',
             datetime=today_noon,
         )
         self.donation = models.Donation.objects.create(
@@ -143,7 +143,7 @@ class TestProcessingConsumer(TransactionTestCase):
             receivername='Médecins Sans Frontières',
             targetamount=1,
             paypalemail='msf@example.com',
-            paypalcurrency='USD',
+            paypalcurrency='CZK',
             datetime=today_noon,
         )
         self.donation = models.Donation.objects.create(
