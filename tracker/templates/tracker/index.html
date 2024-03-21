@@ -26,32 +26,25 @@
     <p class="center-block"><br /></p>
     {% if event.short %}
     <p class="center-block"><a class="btn btn-default btn-block"
-            href="{% url 'tracker:runindex' event=event.short %}">{% trans "Zobrazit runy" %} ({{ count.runs }})</a></p>
+            href="{% url 'tracker:runindex' event=event.short %}">Zobrazit runy ({{ count.runs }})</a></p>
     <p class="center-block"><a class="btn btn-default btn-block"
-            href="{% url 'tracker:bidindex' event=event.short %}">{% trans "Zobrazit cíle" %} ({{ count.bids }})</a></p>
+            href="{% url 'tracker:bidindex' event=event.short %}">Zobrazit cíle ({{ count.bids }})</a></p>
     <p class="center-block"><a class="btn btn-default btn-block"
-            href="{% url 'tracker:milestoneindex' event=event.short %}">{% trans "Zobrazit milníky" %} ({{
-            count.milestones }})</a></p>
+            href="{% url 'tracker:milestoneindex' event=event.short %}">Zobrazit milníky ({{ count.milestones }})</a></p>
     <p class="center-block"><a class="btn btn-default btn-block"
-            href="{% url 'tracker:donorindex' event=event.short %}">{% trans "Zobrazit dárce" %} ({{ count.donors
-            }})</a></p>
+            href="{% url 'tracker:donorindex' event=event.short %}">Zobrazit dárce ({{ count.donors }})</a></p>
     <p class="center-block"><a class="btn btn-default btn-block"
-            href="{% url 'tracker:donationindex' event=event.short %}">{% trans "Zobrazit dary" %} ({{ agg.count }})</a>
+            href="{% url 'tracker:donationindex' event=event.short %}">Zobrazit dary ({{ agg.count }})</a>
     </p>
     {% else %}
-    <p class="center-block"><a class="btn btn-default btn-block" href="{% url 'tracker:runindex' %}">{% trans "Zobrazit
-            runy" %} ({{ count.runs }})</a></p>
-    <p class="center-block"><a class="btn btn-default btn-block" href="{% url 'tracker:bidindex' %}">{% trans "Zobrazit
-            cíle" %} ({{ count.bids }})</a></p>
-    <p class="center-block"><a class="btn btn-default btn-block" href="{% url 'tracker:milestoneindex' %}">{% trans
-            "Zobrazit milníky" %} ({{ count.milestones }})</a></p>
-    <p class="center-block"><a class="btn btn-default btn-block" href="{% url 'tracker:donorindex' %}">{% trans
-            "Zobrazit dárce" %} ({{ count.donors }})</a></p>
-    <p class="center-block"><a class="btn btn-default btn-block" href="{% url 'tracker:donationindex' %}">{% trans
-            "Zobrazit dary" %} ({{ agg.count }})</a></p>
+    <p class="center-block"><a class="btn btn-default btn-block" href="{% url 'tracker:runindex' %}">Zobrazit
+            runy ({{ count.runs }})</a></p>
+    <p class="center-block"><a class="btn btn-default btn-block" href="{% url 'tracker:bidindex' %}">Zobrazit cíle ({{ count.bids }})</a></p>
+    <p class="center-block"><a class="btn btn-default btn-block" href="{% url 'tracker:milestoneindex' %}">Zobrazit milníky ({{ count.milestones }})</a></p>
+    <p class="center-block"><a class="btn btn-default btn-block" href="{% url 'tracker:donorindex' %}">Zobrazit dárce ({{ count.donors }})</a></p>
+    <p class="center-block"><a class="btn btn-default btn-block" href="{% url 'tracker:donationindex' %}">Zobrazit dary ({{ agg.count }})</a></p>
     {% endif %}
-    <p class="center-block"><a class="btn btn-info btn-block" href="{% url 'tracker:eventlist' %}">{% trans "Vybrat
-            jinou událost" %}</a></p>
+    <p class="center-block"><a class="btn btn-info btn-block" href="{% url 'tracker:eventlist' %}">Vybrat jinou událost</a></p>
     <br />
     {% if event.id != None and not event.locked and event.allow_donations %}
     <p class="center-block"><a class="btn btn-lg btn-success btn-block"

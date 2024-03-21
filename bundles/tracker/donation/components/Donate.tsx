@@ -151,7 +151,7 @@ const Donate = (props: DonateProps) => {
         <CurrencyInput
           name="amount"
           value={amount}
-          label="Amount"
+          label="Částka"
           hint={
             <React.Fragment>
               Minimální výše daru je <strong>{CurrencyUtils.asCurrency(minimumDonation)}</strong>

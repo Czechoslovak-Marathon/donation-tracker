@@ -3,7 +3,7 @@
 {% load i18n %}
 
 
-{% block title %}{% trans "Donor Detail" %} &mdash; {{ event.name }}{% endblock %}
+{% block title %}{% trans "Podrobnosti dárce" %} &mdash; {{ event.name }}{% endblock %}
 
 {% block content %}
   <h2 class="text-center">
@@ -11,9 +11,9 @@
   </h2>
   <h3 class="text-center">
     <small>
-      {% trans "Total Donations" %}:
+      {% trans "Dary celkem" %}:
       {{ cache.donation_total|money }} ({{ cache.donation_count }}) &mdash;
-      {% trans "Max/Avg Donation" %}:
+      {% trans "Max/Avg dar" %}:
       {{ cache.donation_max|money }}/{{ cache.donation_avg|money }}
     </small>
   </h3>
@@ -21,13 +21,13 @@
 		<thead>
 		<tr>
 			<th>
-				{% trans "Time Received" %}
+				{% trans "Čas odeslání" %}
 			</th>
 			<th>
-				{% trans "Amount" %}
+				{% trans "Částka" %}
 			</th>
 			<th>
-				{% trans "Comment" %}
+				{% trans "Komentář" %}
 			</th>
 		</tr>
 		</thead>
@@ -66,13 +66,13 @@
 	{% include "tracker/partials/commentslink.html" %}
 	</a></p>-->
 
-	<p align="center"><a href="{% url 'tracker:donorindex' event=event.short %}">{% trans "Back to Donor Index" %}</a></p>
+	<p align="center"><a href="{% url 'tracker:donorindex' event=event.short %}">{% trans "Zpět na seznam dárců" %}</a></p>
   {% else %}
 	<!--<p align="center"><a href="{% url 'tracker:donor' pk=cache.donor_id %}{{ comments|yesno:',?comments' }}">
 	{% include "tracker/partials/commentslink.html" %}
 	</a></p>-->
 
-	<p align="center"><a href="{% url 'tracker:donorindex' %}">{% trans "Back to Donor Index" %}</a></p>
+	<p align="center"><a href="{% url 'tracker:donorindex' %}">{% trans "Zpět na seznam dárců" %}</a></p>
   {% endif %}
 	{% include "tracker/partials/navfooter.html" %}
 {% endblock %}
