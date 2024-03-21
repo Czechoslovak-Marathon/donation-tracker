@@ -99,17 +99,17 @@ const Donate = (props: DonateProps) => {
     <Container>
       <ErrorAlert errors={commentErrors.__all__} />
       <Header size={Header.Sizes.H1} marginless>
-        Thank You For Your Donation
+        Děkujeme za váš dar
       </Header>
-      <Text size={Text.Sizes.SIZE_16}>100% of your donation goes directly to {receiverName}.</Text>
+      <Text size={Text.Sizes.SIZE_16}>100% vašeho daru jde přímo {receiverName}.</Text>
 
       <section className={styles.section}>
         <ErrorAlert errors={commentErrors.requestedalias} />
         <TextInput
           name="alias"
           value={name}
-          label="Preferred Name/Alias"
-          hint="Leave blank to donate anonymously"
+          label="Preferované jméno"
+          hint="Ponechte prázdné pro anonymní dar"
           size={TextInput.Sizes.LARGE}
           onChange={updateName}
           maxLength={32}
@@ -119,11 +119,11 @@ const Donate = (props: DonateProps) => {
         <TextInput
           name="email"
           value={email}
-          label="Email Address"
+          label="Emailová adresa"
           hint={
             PRIVACY_POLICY_URL && (
               <>
-                Click <Anchor href={PRIVACY_POLICY_URL}>here</Anchor> for our privacy policy
+                Klikněte <Anchor href={PRIVACY_POLICY_URL}>zde</Anchor> pro zobrazení zásad ochrany osobních údajů.
               </>
             )
           }
@@ -136,7 +136,7 @@ const Donate = (props: DonateProps) => {
         <ErrorAlert errors={commentErrors.requestedsolicitemail} />
 
         <Text size={Text.Sizes.SIZE_16} marginless>
-          Do you want to receive emails from {receiverName}?
+          Chcete dostávat emaily od {receiverName}?
         </Text>
 
         <RadioGroup
@@ -154,7 +154,7 @@ const Donate = (props: DonateProps) => {
           label="Amount"
           hint={
             <React.Fragment>
-              Minimum donation is <strong>{CurrencyUtils.asCurrency(minimumDonation)}</strong>
+              Minimální výše daru je <strong>{CurrencyUtils.asCurrency(minimumDonation)}</strong>
             </React.Fragment>
           }
           size={CurrencyInput.Sizes.LARGE}
@@ -170,7 +170,7 @@ const Donate = (props: DonateProps) => {
               key={amountPreset}
               look={Button.Looks.OUTLINED}
               onClick={updateAmountPreset(amountPreset)}>
-              ${amountPreset}
+              {amountPreset} Kč
             </Button>
           ))}
         </div>
@@ -180,9 +180,9 @@ const Donate = (props: DonateProps) => {
         <TextInput
           name="comment"
           value={comment}
-          label="Leave a Comment?"
-          placeholder="Enter Comment Here"
-          hint="Please refrain from offensive language or hurtful remarks. All donation comments are screened and will be removed from the website if deemed unacceptable."
+          label="Chcete zanechat komentář?"
+          placeholder="Napište komentář zde"
+          hint="Prosím, vyvarujte se vulgaritám a zraňujícím komentářům. Všechny komentáře budou předem zkontrolovány a pokud budou nevhodné, nepřečteme je."
           multiline
           onChange={updateComment}
           maxLength={5000}
@@ -197,16 +197,15 @@ const Donate = (props: DonateProps) => {
       )}
 
       <section className={styles.section}>
-        <Header size={Header.Sizes.H3}>Incentives</Header>
+        <Header size={Header.Sizes.H3}>Cíle</Header>
         <Text>
-          Donation incentives can be used to add bonus runs to the schedule and influence choices by runners. Would you
-          like to put your donation towards an incentive?
+          Cíle mohou při dosažení např. přidávat bonusové runy či ovlivnit již existující runy. Chcete si vybrat cíl?
         </Text>
         <DonationIncentives className={styles.incentives} step={step} total={amount != null ? amount : 0} />
       </section>
 
       <section className={styles.section}>
-        <Header size={Header.Sizes.H3}>Donate!</Header>
+        <Header size={Header.Sizes.H3}>Darovat!</Header>
         {!donationValidity.valid && <Text>{donationValidity.errors.map(error => error.message)}</Text>}
         <Button
           size={Button.Sizes.LARGE}
@@ -214,7 +213,7 @@ const Donate = (props: DonateProps) => {
           fullwidth
           onClick={handleSubmit}
           data-testid="donation-submit">
-          Donate {amount != null ? CurrencyUtils.asCurrency(amount) : null}
+          Darovat {amount != null ? CurrencyUtils.asCurrency(amount) : null}
         </Button>
       </section>
     </Container>

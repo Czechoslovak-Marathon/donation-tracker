@@ -18,7 +18,7 @@ class TestPostDonation(TransactionTestCase):
             receivername='Médecins Sans Frontières',
             targetamount=1,
             paypalemail='msf@example.com',
-            paypalcurrency='USD',
+            paypalcurrency='CZK',
             datetime=datetime.datetime(2018, 1, 1),
         )
         self.postback = PostbackURL.objects.create(

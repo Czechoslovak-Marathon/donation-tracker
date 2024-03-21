@@ -2,49 +2,49 @@
 {% load donation_tags %}
 {% load i18n %}
 
-{% block title %}{% trans "Bid Index" %} &mdash; {{ event.name }}{% endblock %}
+{% block title %}{% trans "Seznam cílů" %} &mdash; {{ event.name }}{% endblock %}
 
 {% block content %}
-    <div class="fa-stack center-block medium-icon-blue fa-5x">
-        <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-line-chart fa-stack-1x fa-inverse"></i>
-    </div>
+<div class="fa-stack center-block medium-icon-blue fa-5x">
+    <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-line-chart fa-stack-1x fa-inverse"></i>
+</div>
 
-    <h2 class="text-center">
-        {% trans "Bid Index" %} &mdash; {{ event.name }}
-        <br/>
-        <small>
-            <span>{% trans "Total" %}: {{ total|money }}</span> &mdash;
-            <span>{% trans "Choice Total" %}: {{ choiceTotal|money }}</span> &mdash;
-            <span>{% trans "Challenge Total" %}: {{ challengeTotal|money }}</span>
-        </small>
-    </h2>
+<h2 class="text-center">
+    {% trans "Seznam cílů" %} &mdash; {{ event.name }}
+    <br />
+    <small>
+        <span>{% trans "Celkem" %}: {{ total|money }}</span> &mdash;
+        <span>{% trans "Celkem pro výběry" %}: {{ choiceTotal|money }}</span> &mdash;
+        <span>{% trans "Celkem pro výzvy" %}: {{ challengeTotal|money }}</span>
+    </small>
+</h2>
 
-    {% include "tracker/partials/event_links.html" with index='tracker:bidindex' %}
+{% include "tracker/partials/event_links.html" with index='tracker:bidindex' %}
 
-    <table class="table table-condensed table-striped small">
-        <thead>
+<table class="table table-condensed table-striped small">
+    <thead>
         <tr>
             <th>
-                {% trans "Name" %}
+                {% trans "Název" %}
             </th>
             <th>
                 {% trans "Run" %}
             </th>
             <th>
-                {% trans "Description" %}
+                {% trans "Popis" %}
             </th>
             <th>
-                {% trans "Amount" %}
+                {% trans "Častka" %}
             </th>
             <th>
-                {% trans "Goal" %}
+                {% trans "Cíl" %}
             </th>
         </tr>
-        </thead>
-        {% for bid in bids %}
-            {% include 'tracker/partials/option.html' with bid=bid only %}
-        {% endfor %}
-    </table>
+    </thead>
+    {% for bid in bids %}
+    {% include 'tracker/partials/option.html' with bid=bid only %}
+    {% endfor %}
+</table>
 
-    {% include "tracker/partials/navfooter.html" %}
+{% include "tracker/partials/navfooter.html" %}
 {% endblock %}

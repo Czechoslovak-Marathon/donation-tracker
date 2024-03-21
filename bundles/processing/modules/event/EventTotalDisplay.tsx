@@ -6,13 +6,14 @@ import APIClient from '@public/apiv2/APIClient';
 
 import useEventTotalStore, { setEventTotalIfNewer } from './EventTotalStore';
 
-const currencyFormat = Intl.NumberFormat('en-US', {
+const currencyFormat = Intl.NumberFormat('cs-CZ', {
   style: 'currency',
-  currency: 'USD',
+  currency: 'CZK',
   minimumIntegerDigits: 1,
-  minimumFractionDigits: 2,
+  minimumFractionDigits: 0,
+  maximumFractionDigits: 0,
 });
-const numberFormat = Intl.NumberFormat('en-US', { maximumFractionDigits: 0 });
+const numberFormat = Intl.NumberFormat('cs-CZ', { maximumFractionDigits: 0 });
 
 interface EventTotalDisplayProps {
   eventId: string;

@@ -170,13 +170,13 @@ forumfilter.needs_autoescape = True
 
 @register.filter
 def money(value):
-    locale.setlocale(locale.LC_ALL, '')
+    locale.setlocale(locale.LC_ALL, 'cs_CZ.utf8')
     try:
         if not value:
             return locale.currency(0.0)
         return locale.currency(value, symbol=True, grouping=True)
     except ValueError:
-        locale.setlocale(locale.LC_MONETARY, 'en_US.utf8')
+        locale.setlocale(locale.LC_MONETARY, 'cs_CZ.utf8')
         if not value:
             return locale.currency(0.0)
         return locale.currency(value, symbol=True, grouping=True)
